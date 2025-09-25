@@ -2,7 +2,7 @@
 # Multi-stage build para otimizar o tamanho da imagem
 
 # Estágio 1: Build da aplicação
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Definir diretório de trabalho
 WORKDIR /app
@@ -10,8 +10,8 @@ WORKDIR /app
 # Copiar arquivos de dependências
 COPY package*.json ./
 
-# Instalar dependências
-RUN npm ci --only=production
+# Instalar todas as dependências (incluindo devDependencies para o build)
+RUN npm ci
 
 # Copiar código fonte
 COPY . .
