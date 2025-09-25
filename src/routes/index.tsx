@@ -9,8 +9,8 @@ const AppRoutes = () => (
   <BrowserRouter>
     <DefaultLayout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/curso-aba-fono" element={<CursoABAFono />} />
+        <Route path={ROUTES.home} element={<Home />} />
+        <Route path={ROUTES.cursoABAFono} element={<CursoABAFono />} />
       </Routes>
     </DefaultLayout>
   </BrowserRouter>
